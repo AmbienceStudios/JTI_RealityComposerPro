@@ -1,0 +1,288 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def Cube "icon_LDQuality" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        reorder nameChildren = ["icon_LDQuality", "Material"]
+        rel material:binding = </Root/icon_LDQuality/icon_LDQuality>
+        double size = 0.2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.5, 0.5, 0.005)
+        float3 xformOp:translate = (-0.10659787, 0.2, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "icon_LDQuality"
+        {
+            token outputs:mtlx:surface.connect = </Root/icon_LDQuality/icon_LDQuality/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = None
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 109.5)
+            float2 ui:nodegraph:realitykit:subgraphOutputs:size = (182, 99)
+
+            def Shader "DefaultSurfaceShader" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                color3f inputs:diffuseColor.connect = </Root/icon_LDQuality/icon_LDQuality/Image.outputs:out>
+                float inputs:metallic
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (-341.08984, 96.55078)
+                float2 ui:nodegraph:node:size = (149, 199)
+                int ui:nodegraph:node:stackingOrder = 2
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                color3f inputs:default
+                asset inputs:file.connect = </Root/icon_LDQuality/icon_LDQuality/Constant.outputs:out>
+                float2 inputs:texcoord
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (-572.4922, 35.65625)
+                float2 ui:nodegraph:node:size = (149, 199)
+                int ui:nodegraph:node:stackingOrder = 5
+            }
+
+            def Shader "Constant"
+            {
+                uniform token info:id = "ND_constant_filename"
+                asset inputs:value = @Assets/imgs/ICON-FIRM-FILTER.png@
+                asset outputs:out
+                float2 ui:nodegraph:node:pos = (-816.85156, -13.089844)
+                float2 ui:nodegraph:node:size = (143, 53)
+                int ui:nodegraph:node:stackingOrder = 11
+            }
+        }
+    }
+
+    def Cube "logo_LDPlus" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        reorder nameChildren = ["icon_LDQuality", "Material"]
+        rel material:binding = </Root/logo_LDPlus/icon_LDQuality>
+        double size = 0.2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.9, 0.5, 0.005)
+        float3 xformOp:translate = (0, 0.9, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "icon_LDQuality"
+        {
+            token outputs:mtlx:surface.connect = </Root/logo_LDPlus/icon_LDQuality/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = None
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 109.5)
+            float2 ui:nodegraph:realitykit:subgraphOutputs:size = (182, 99)
+
+            def Shader "DefaultSurfaceShader" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                color3f inputs:diffuseColor.connect = </Root/logo_LDPlus/icon_LDQuality/Image.outputs:out>
+                float inputs:metallic
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (-341.08984, 96.55078)
+                float2 ui:nodegraph:node:size = (149, 199)
+                int ui:nodegraph:node:stackingOrder = 2
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                color3f inputs:default
+                asset inputs:file.connect = </Root/logo_LDPlus/icon_LDQuality/Constant.outputs:out>
+                float2 inputs:texcoord
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (-572.4922, 35.65625)
+                float2 ui:nodegraph:node:size = (149, 199)
+                int ui:nodegraph:node:stackingOrder = 5
+            }
+
+            def Shader "Constant"
+            {
+                uniform token info:id = "ND_constant_filename"
+                asset inputs:value = @Assets/imgs/LDPlus.png@
+                asset outputs:out
+                float2 ui:nodegraph:node:pos = (-816.85156, -13.089844)
+                float2 ui:nodegraph:node:size = (143, 53)
+                int ui:nodegraph:node:stackingOrder = 10
+            }
+        }
+    }
+
+    def Cube "nextBtn" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        reorder nameChildren = ["icon_LDQuality", "Material"]
+        rel material:binding = </Root/nextBtn/icon_LDQuality>
+        double size = 0.2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.9, 0.25, 0.005)
+        float3 xformOp:translate = (0, 0.08860263, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "icon_LDQuality"
+        {
+            token outputs:mtlx:surface.connect = </Root/nextBtn/icon_LDQuality/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = None
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 109.5)
+            float2 ui:nodegraph:realitykit:subgraphOutputs:size = (182, 99)
+
+            def Shader "DefaultSurfaceShader" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                color3f inputs:diffuseColor.connect = </Root/nextBtn/icon_LDQuality/Image.outputs:out>
+                float inputs:metallic
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (-341.08984, 96.55078)
+                float2 ui:nodegraph:node:size = (149, 199)
+                int ui:nodegraph:node:stackingOrder = 2
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                color3f inputs:default
+                asset inputs:file.connect = </Root/nextBtn/icon_LDQuality/Constant.outputs:out>
+                float2 inputs:texcoord
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (-572.4922, 35.65625)
+                float2 ui:nodegraph:node:size = (149, 199)
+                int ui:nodegraph:node:stackingOrder = 5
+            }
+
+            def Shader "Constant"
+            {
+                uniform token info:id = "ND_constant_filename"
+                asset inputs:value = @Assets/imgs/next.png@
+                asset outputs:out
+                float2 ui:nodegraph:node:pos = (-816.85156, -13.089844)
+                float2 ui:nodegraph:node:size = (143, 53)
+                int ui:nodegraph:node:stackingOrder = 10
+            }
+        }
+    }
+
+    def Cube "text_LDQuality" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        reorder nameChildren = ["icon_LDQuality", "Material"]
+        rel material:binding = </Root/text_LDQuality/icon_LDQuality>
+        double size = 0.2
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (0.9, 0.5, 0.005)
+        float3 xformOp:translate = (0.06723879, 0.2, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "icon_LDQuality"
+        {
+            token outputs:mtlx:surface.connect = </Root/text_LDQuality/icon_LDQuality/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = None
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 109.5)
+            float2 ui:nodegraph:realitykit:subgraphOutputs:size = (182, 99)
+
+            def Shader "DefaultSurfaceShader" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:roughness = 0.75
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                color3f inputs:diffuseColor.connect = </Root/text_LDQuality/icon_LDQuality/Image.outputs:out>
+                float inputs:metallic
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (-341.08984, 96.55078)
+                float2 ui:nodegraph:node:size = (149, 199)
+                int ui:nodegraph:node:stackingOrder = 2
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                color3f inputs:default
+                asset inputs:file.connect = </Root/text_LDQuality/icon_LDQuality/Constant.outputs:out>
+                float2 inputs:texcoord
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (-572.4922, 35.65625)
+                float2 ui:nodegraph:node:size = (149, 199)
+                int ui:nodegraph:node:stackingOrder = 5
+            }
+
+            def Shader "Constant"
+            {
+                uniform token info:id = "ND_constant_filename"
+                asset inputs:value = @Assets/imgs/04_Thicker.png@
+                asset outputs:out
+                float2 ui:nodegraph:node:pos = (-816.85156, -13.089844)
+                float2 ui:nodegraph:node:size = (143, 53)
+                int ui:nodegraph:node:stackingOrder = 13
+            }
+        }
+    }
+
+    def "Phase4" (
+        active = true
+        prepend references = @Assets/USDZ/Phase4.usdz@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0, 0.3, -0.1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+}
+
